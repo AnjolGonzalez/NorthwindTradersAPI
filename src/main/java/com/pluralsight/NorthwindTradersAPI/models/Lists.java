@@ -1,24 +1,24 @@
 package com.pluralsight.NorthwindTradersAPI.models;
 
+import com.pluralsight.NorthwindTradersAPI.dao.CategoryDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class Lists {
-    ArrayList<Category> categoryList;
+import static java.awt.AWTEventMulticaster.add;
 
+@Component
+public class Lists implements CategoryDao {
+    List<Category> categoryList = new ArrayList<>();
+
+    @Autowired
     public Lists() {
-        this.categoryList = new ArrayList<>();
-        Category category = new Category(1, "Object");
-        Category category2 = new Category(1, "Object");
-        Category category3 = new Category(1, "Object");
-        Category category4 = new Category(1, "Object");
-
-        categoryList.add(1, category);
-        categoryList.add(2, category2);
-        categoryList.add(3, category3);
-        categoryList.add(4, category4);
+        categoryList.add(new Category(1, "Object"));
 
     }
-    public ArrayList<Category> getCategoryList() {
+    public List<Category> getCategoryList() {
         return categoryList;
     }
 
@@ -31,4 +31,17 @@ public class Lists {
         return null;
     }
 
+    @Override
+    public List<Category> getAll() {
+        ArrayList<Category> categories = new ArrayList<>();
+        for (Category c : categories) {
+            categories.add(c);
+        }
+        return categories;
+    }
+
+    @Override
+    public Category getByID(int id) {
+        return null;
+    }
 }

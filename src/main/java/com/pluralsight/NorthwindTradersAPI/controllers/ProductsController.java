@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProductsController {
     @RequestMapping(path = "/products" , method = RequestMethod.GET)
-    public ArrayList<Product> getProducts()
+    public List<Product> getProducts()
     {
         Store store = new Store();
         return store.displayProducts();
