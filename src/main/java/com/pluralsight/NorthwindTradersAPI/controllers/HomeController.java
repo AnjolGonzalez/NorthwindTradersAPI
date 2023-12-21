@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
+  //  @RequestMapping(path = "/", method = RequestMethod.GET)
 
-    public String index (@RequestParam(defaultValue = "USA") String country) {
-        return "Hello welcome " + country + "! HOME OF THE FREE!!!";
+  //  public String index (@RequestParam(defaultValue = "USA") String country) {
+  //      return "Hello welcome " + country + "! HOME OF THE FREE!!!";
+  //  }
+
+    @RequestMapping(path = "/Angel" , method = RequestMethod.GET)
+    public String angelPage( @RequestParam(defaultValue = "AngelsAwesome") String anotherName) {
+        return "Hello" + anotherName;
     }
 }
